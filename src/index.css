@@ -1,0 +1,171 @@
+/*
+    --------------
+    Variables
+    --------------
+*/
+:root {
+    /* ------  Colors     ------ */
+    --clr-dark: hsl(230 35% 7%);
+    --clr-light: hsl(0 0% 100%);
+    --clr-blue: hsl(231 77% 90%);
+    /* ------  Typography ------ */
+    /* Font family */
+    --ff-bfr-serif: "Bellefair", serif;
+    --ff-bwc-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-bwr-sans: "Barlow", sans-serif;
+
+    /* Font size */
+    --fs-144: 9rem;     /* 144px */
+    --fs-100: 6.25rem;  /* 100px */
+    --fs-56: 3.5rem;    /* 56px */
+    --fs-32: 2rem;      /* 32px */
+    --fs-28: 1.75rem;   /* 28px */
+    --fs-18: 1.125rem   /* 18px */
+    --fs-16: 1rem;      /* 16px */
+    --fs-14: 0.875rem;  /* 14px */
+
+    /* Letter spacing */
+    --ls-4: 0.25rem;
+    --ls-2: 0.125rem;
+    --ls-0: 0rem;
+
+    /* line height */
+    --lh-1 : 171.9%;    
+    --lh-2 : 114.6%;
+    --lh-3 : 64.2%;
+    --lh-4 : 36.7%;
+    --lh-5 : 33.6%;
+    --lh-6 : 32.1%;
+    --lh-7 : 16.8%;
+    --lh-8 : 19.2%;
+    --lh-9 : 190%;
+
+    /* ------  Spacing    ------ */
+    
+}
+
+/*
+    --------------
+    RESET
+    --------------
+*/
+
+/* --- Box sizing --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    color: hsl();
+}
+
+
+/* --- Reset margins --- */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* --- body defaults --- */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Miscalleneous --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+    --------------
+    Utility classes
+    --------------
+*/
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 80rem;
+
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---  Main colors  --- */
+.bg-white { background-color: var(--clr-white); }
+.bg-blue { background-color: var(--clr-blue); }
+.bg-dark { background-color: var(--clr-dark); }
+.text-white { color: var(--clr-white); }
+.text-blue { color: var(--clr-blue); }
+.text-dark { color: var(--clr-dark); }
+
+/* --- Transforms --- */
+.upper{text-transform: uppercase;}
+.lower{text-transform: lowercase;}
+.capitalize{text-transform: capitalize;}
+
+body {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    font-family: var(--ff-bwr-sans);
+    line-height: var(--lh-9);
+    letter-spacing: var(--ls-0);
+}
