@@ -1,13 +1,18 @@
 
-import './App.css'
+import './App.css';
+import './Components/Components.css';
+import CompTest from './CompTest';
+
+
+
 
 function App() {
 
   return (
     <>
-      Hello world!
+    <CompTest />
     </>
   )
 }
 
-export default App
+export default App;

@@ -1,0 +1,40 @@
+/*
+    --------------
+    Test object | To be deleted!!!!!
+    --------------
+*/
+
+.test {
+    min-width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+    --------------
+    Class styling
+    --------------
+*/
+body {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    font-family: var(--ff-bwr-sans);
+    line-height: var(--lh-9);
+    letter-spacing: var(--ls-0);
+    font-weight: 400;
+
+}
+
+/*
+    --------------
+    Utility classes
+    --------------
+*/
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
