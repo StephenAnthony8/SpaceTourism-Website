@@ -38,3 +38,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+.circle {
+    border-radius: 100%;
+    width: var(--diameter);
+    height: var(--diameter);
+}
