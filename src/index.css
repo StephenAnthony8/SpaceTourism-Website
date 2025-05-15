@@ -185,4 +185,5 @@ select {
 
 /* --- Misc classes--- */
 .fit { min-height: fit-content; }
+.invisible { display: none; }
 
