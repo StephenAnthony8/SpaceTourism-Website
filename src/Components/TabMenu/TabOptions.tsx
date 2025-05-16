@@ -1,13 +1,17 @@
 interface MyProps {
-    tabname: string;
+  planet: string;
+activePlanet: string;
+setActivePlanet: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function TabOptions ({ tabname }: MyProps) {
-    return (
-        <li className="uppercase underline tab-menu">
-            <span>{tabname}</span>
-        </li>
-    );
-}
+export default function TabOptions({ planet, activePlanet, setActivePlanet }: MyProps) {
 
-export default TabOptions;
+	const active: string = "active";
+	const inactive: string = "inactive"; 
+
+  return (
+    <li className={`uppercase underline underline-${activePlanet === planet ? active : inactive} tab-option`} onClick={() => setActivePlanet(planet)}>
+      <span>{planet}</span>
+    </li>
+  );
+}

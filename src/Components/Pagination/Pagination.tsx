@@ -8,7 +8,7 @@ interface MyProps {
 }
 /** 
  * nums: nodes to be rendered
- * size: (small or large) specifies which class to use while rendering
+ * size: ("small" or "large") specifies which class to use while rendering
  * PaginationComponent: Component type to render 
  * Function: Provide a container for all pagination components to render
  */
