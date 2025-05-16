@@ -14,6 +14,7 @@
   /* Pagination: large */
   --pagination-large-diameter: 80px;
   --font-size: var(--fs-32);
+  --column-if-desktop: column;
 
   /* Navigation States */
   --nav-width: fit-content;
@@ -36,6 +37,7 @@
     /* Navigation States */
     --nav-min-width: 488px;
     --line-state: 0;
+    --column-if-desktop: row;
   }
 }
 @media screen and (max-width: 600px) {/* ------   Mobile    ------ */
@@ -144,6 +146,7 @@
 }
 .large-pagination-menu {
   --pagination-gap: var(--sp-400);
+  flex-direction: var(--column-if-desktop);
 }
 
 /* ------   Navigation Menu   ------ */
