@@ -6,7 +6,7 @@ export default function NavMenu() {
   /* 
     To-DO: Prevent rerendering of parent component & unaffected children
      */
-  const [activeTab, setActiveTab] = useState<string>("");
+  const [activePage, setActivePage] = useState<string>("");
   const navigationOptions: string[] = [
     "Home",
     "Destination",
@@ -15,20 +15,20 @@ export default function NavMenu() {
   ];
 
   return (
-    <div className="flex nav-container">
+    <div className="flex nav-bar">
       {/**
        * Desktop & tablet class: navigation-menu-desktop-tablet 
        * Mobile class: navigation-menu-mobile
        * <ul className="flex nav-menu navigation-menu-mobile"> 
        */}
        <NavLogo />
-      <nav className="flex nav-menu nav-menu-desktop-tablet">
-        {navigationOptions.map((option) => (
+      <nav className="flex nav-menu">
+        {navigationOptions.map((navPage) => (
           <NavOptions
-            key={option}
-            navpage={option}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
+            key={navPage}
+            navPage={navPage}
+            activePage={activePage}
+            setActivePage={setActivePage}
           />
         ))}
       </nav>

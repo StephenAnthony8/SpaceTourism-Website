@@ -22,8 +22,14 @@
   --nav-after-width: 100%;
   --nav-after-height: 3px;
 
+  --nav-line-state: 1;
   --nav-min-width: 664px;
-  --line-state: 1;
+  --nav-padding: var(--sp-600);
+  --nav-justify: space-evenly;
+  --nav-bar-padding-top: var(--sp-500);
+  --nav-logo-padding: var(--sp-800);
+
+
 }
 @media screen and (max-width: 1000px) {/* ------   Tablet    ------ */
   :root {
@@ -33,11 +39,16 @@
     /* Pagination: large */
     --pagination-large-diameter: 56px;
     --font-size: var(--fs-24);
+    --column-if-desktop: row;
 
     /* Navigation States */
+    
+    --nav-line-state: 0;
     --nav-min-width: 488px;
-    --line-state: 0;
-    --column-if-desktop: row;
+    --nav-padding: var(--sp-500);
+    --nav-bar-padding-top: 0;
+    --nav-justify: flex-end;
+    --nav-logo-padding: var(--sp-500);
   }
 }
 @media screen and (max-width: 600px) {/* ------   Mobile    ------ */
@@ -55,6 +66,8 @@
     --nav-height: fit-content;
     --nav-after-width: 3px;
     --nav-after-height: 100%;
+
+    
     
 
   }
@@ -151,7 +164,7 @@
 
 /* ------   Navigation Menu   ------ */
 .nav-option {
-  /* font-feature-settings: 'liga' off, 'clig' off; */
+  font-feature-settings: 'liga' off, 'clig' off;
   width: var(--nav-width);
   height: var(--nav-height);
   align-items: center;
@@ -169,30 +182,22 @@
   content: "0" counter(nav-count);
 }
 .nav-menu {
+  --gap: var(--sp-600);
   counter-set: nav-count;
+  min-width: var(--nav-min-width);
+  padding: 0px var(--nav-padding);
+  justify-content: var(--nav-justify);
   flex: 1 0 0;
   background-color: rgba(var(--rgb-white), 0.05);
-  justify-content: var(--nav-flex-justify);
-  align-items: var(--nav-flex-align);
   backdrop-filter: blur(40px);
-  
 }
-.nav-menu-desktop-tablet { 
-  --nav-flex-justify: flex-end;
-  --nav-flex-align: center;
-  --gap: var(--sp-800);
-  min-width: var(--nav-min-width);
-  /* max-width: fit-content; */
-  padding: 0px var(--sp-600);
+.nav-bar {
+  --gap: -32px;
+  padding-top: var(--nav-bar-padding-top);
+  width: 100%;
+  justify-content: space-between;
 }
-.nav-menu-mobile {
-  --nav-flex-justify: center;
-  --nav-flex-align: flex-end;
-  --gap: var(--sp-100);
-  flex-direction: column;
-  padding-right: var(--sp-300);
-  align-self: stretch;
-}
+
 
 .nav-container {
   --gap: var(--sp-800);
@@ -200,17 +205,18 @@
   justify-content: center;
 }
 .logo-container {
-  justify-content: center;
+  --gap: var(--sp-800);
   align-items: center;
   flex: 1 0 0;
-  padding-left: var(--sp-800);
+  margin-left: var(--nav-logo-padding); var(--sp-800);
 }
 .line-separator {
   position: relative;
   right: -32px;
-  flex: 1 0 0;
+  flex: var(--nav-line-state) 0 0;
   height: 3px;
   background-color: rgba(var(--rgb-white), 0.25);
+  z-index: 2;
 }
 
 /* ------ Tabs ------ */
