@@ -1,12 +1,14 @@
 import { useState } from "react";
 import NavOptions from "./NavOptions";
 import NavLogo from "./NavLogo";
+/* import { useDeviceMode, type devices } from "../../Store"; */
 
 export default function NavMenu() {
   /* 
     To-DO: Prevent rerendering of parent component & unaffected children
      */
   const [activePage, setActivePage] = useState<string>("");
+  /* const deviceType: devices = useDeviceMode(); */
   const navigationOptions: string[] = [
     "Home",
     "Destination",
@@ -21,7 +23,7 @@ export default function NavMenu() {
        * Mobile class: navigation-menu-mobile
        * <ul className="flex nav-menu navigation-menu-mobile"> 
        */}
-       <NavLogo />
+       <NavLogo /* deviceType={deviceType} */ />
       <nav className="flex nav-menu">
         {navigationOptions.map((navPage) => (
           <NavOptions
