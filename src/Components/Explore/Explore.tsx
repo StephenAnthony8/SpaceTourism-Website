@@ -1,7 +1,10 @@
 
+
 function Explore() {
-  return (
-      <button className="bg-white text-dark circle explore-inner">Explore</button>
+  return(
+    <button className="explore explore-mobile flex flex-center upper text-dark circle">
+      <span>Explore</span>
+    </button>
   );
 }
 

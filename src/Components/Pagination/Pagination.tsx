@@ -1,33 +1,31 @@
-import  { useState } from "react";
-
-interface MyProps {
-  nums: number[];
-  size: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  PaginationComponent: any;
+interface Props {
+  renderType: string;
+  paginationOptions: number[];
 }
-/** 
- * nums: nodes to be rendered
- * size: ("small" or "large") specifies which class to use while rendering
- * PaginationComponent: Component type to render 
- * Function: Provide a container for all pagination components to render
+
+import React, { useState } from "react";
+import LargePaginationOptions from "./LargePaginationOptions";
+import SmallPaginationOptions from "./SmallPaginationOptions";
+
+/**
+ * Pagination: renders either pagination menu based on renderType
+ * 
+ * renderType: string specifying which render method to use | "small" or "large"
+ * 
+ * paginationOptions: array of numbers to render
  */
-export default function Pagination({ nums, size, PaginationComponent }: MyProps) {
-  /* Tracks the clicked component */
-  const [activePage, setActivePage] = useState<number | null>(null);
-  /**
-   * TODO
-   * Add respective document links to various components
-   */
+export default function Pagination({renderType, paginationOptions}: Props) {
+  const [active, setActive] = useState<number | null>(null);
+
+
+  /* @ts-expect-error: Correct element & type assignment */
+  const RenderPagination: React.FC = (renderType === "small" ? SmallPaginationOptions : LargePaginationOptions);
 
   return (
-    <nav className={`flex pagination-menu ${size}-pagination-menu  `}>
-      {nums.map((num) => (
-        <PaginationComponent
-          key={num}
-          pageCount={num}
-          activePage={activePage}
-          setActivePage={setActivePage}
+    <nav className="pagination flex">
+      {paginationOptions.map((currentPage) => (
+        <RenderPagination {...{ currentPage, active, setActive }} 
+        key={currentPage}
         />
       ))}
     </nav>

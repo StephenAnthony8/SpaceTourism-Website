@@ -1,27 +1,30 @@
-interface MyProps {
-  pageCount: number;
-  activePage: number | null;
-  setActivePage: React.Dispatch<React.SetStateAction<number | null>>;
+interface Props {
+  currentPage: number;
+  active: number | null;
+  setActive: React.Dispatch<React.SetStateAction<number | null>>;
 }
 /**
- * PageCount - The number of pages to be rendered
- * IsActive - Check for which node is currently active
- * SetIsActive - Sets the current component as the active item on click
+ * SmallPaginationOptions - renders the Small Pagination section
+ * 
+ * currentPage - Page to be rendered
+ * 
+ * activePage - stores currently active Page
+ * 
+ * setActivePage - Sets the current component as the active item (on click)
  */
 export default function SmallPaginationOptions({
-  pageCount,
-  activePage,
-  setActivePage,
-}: MyProps) {
-  const selected: string = "selected";
-  const unselected: string = "unselected";
-
+  active,
+  setActive,
+  currentPage,
+}: Props) {
+  const activePage = "smallPagination-active";
+  const optionClasses = "smallPagination-tablet upper circle bg-white";
   return (
     <li
-      className={`circle ${
-        pageCount === activePage ? selected : unselected
-      } small-pagination`}
-      onClick={() => setActivePage(pageCount)}
-    />
+      className={`smallPagination ${
+        active === currentPage ? activePage : ""
+      } ${optionClasses}`}
+      onClick={() => setActive(currentPage)}
+    ></li>
   );
 }

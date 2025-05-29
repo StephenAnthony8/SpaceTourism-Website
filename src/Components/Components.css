@@ -3,114 +3,69 @@
   Variables
   --------------
 */
-:root {/* ------   Desktop   ------ */
-  /* Explore button */
-  --circle-diameter: 272px;
-  --outline-length: 88px;
+/* ------   Desktop   ------ */
+/* :root {
 
-  /* Pagination: small */
-  --pagination-small-diameter: 15px;
+} */
 
-  /* Pagination: large */
-  --pagination-large-diameter: 80px;
-  --font-size: var(--fs-32);
-  --column-if-desktop: column;
-
-  /* Navigation States */
-  --nav-width: fit-content;
-  --nav-height: 96px;
-  --nav-after-width: 100%;
-  --nav-after-height: 3px;
-
-  --nav-line-state: 1;
-  --nav-min-width: 664px;
-  --nav-padding: var(--sp-600);
-  --nav-justify: space-evenly;
-  --nav-bar-padding-top: var(--sp-500);
-  --nav-logo-padding: var(--sp-800);
-  --logo-container-width: 100%;
-
-
-}
-@media screen and (max-width: 1000px) {/* ------   Tablet    ------ */
+/* ------   Tablet   ------ */
+/* @media screen and (max-width: px) {
   :root {
-    /* Pagination: small */
-    --pagination-small-diameter: 10px;
-
-    /* Pagination: large */
-    --pagination-large-diameter: 56px;
-    --font-size: var(--fs-24);
-    --column-if-desktop: row;
-
-    /* Navigation States */
-    
-    --nav-line-state: 0;
-    --nav-min-width: 488px;
-    --nav-padding: var(--sp-500);
-    --nav-bar-padding-top: 0;
-    --nav-justify: flex-end;
-    --nav-logo-padding: var(--sp-500);
-    --logo-container-width: fit-content;
-  }
-}
-@media screen and (max-width: 600px) {/* ------   Mobile    ------ */
-  :root {
-    /* Explore button */
-    --circle-diameter: 144px;
-    --outline-length: 88px;
-
-    /* Pagination: large */
-    --pagination-large-diameter: 40px;
-    --font-size: var(--fs-24);
-
-    /* Navigation States */
-    --nav-width: 222px;
-    --nav-height: fit-content;
-    --nav-after-width: 3px;
-    --nav-after-height: 100%;
-
-    
-    
 
   }
-}
+} */
+
+/* ------   Mobile   ------ */
+/* @media screen and (max-width: 450px) {
+  :root {
+
+  }
+} */
 
 /*
     --------------
     Component Utility Classes
     --------------
 */
-.unselected {
-  opacity: 0.174363;
-}
-.unselected:hover {
-  opacity: 0.5;
-}
-.selected {
-  opacity: 1;
-}
-.underline {
-  display: inline-flex;
-  gap: var(--sp-100);
-  font-family: var(--ff-bwc-sans-cond);
-  color: var(--clr-white);
-  position: relative;
-  letter-spacing: 2px;
-}
 
-.underline::after {
+/**
+ - change select color for nav
+ - Variables: height, width
+*/
+
+.select-state::after,
+.select-state-active::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: var(--clr-white);
-  opacity: 0;
+  height: var(--select-state-height, 3px);
+  width: var(--select-state-width, 100%);
+  /* transition: background-color 250ms ease-in-out; */
 }
-.underline-inactive:hover::after {
-  opacity: 0.5;
+.select-state:hover::after {
+  background-color: rgba(var(--rgb-white), 0.5);
 }
-.underline-active::after {
-  opacity: 1;
+
+.select-state-active::after {
+  background-color: rgba(var(--rgb-white), 1);
+}
+
+/* Nav & Tab Options generator class */
+.utilityOptions {
+  --gap: var(--sp-100);
+  height: var(--navOptions-height, 32px);
+
+  position: relative;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(--fs-16);
+  letter-spacing: var(--ls-2);
+  line-height: normal;
+}
+.utilityOptions::after {
+  --select-state-height: var(--nav-mobile-height, 3px);
+  --select-state-width: var(--nav-mobile-width, 100%);
 }
 
 /*
@@ -119,118 +74,221 @@
     --------------
 */
 /* ------   Explore Button   ------ */
-.explore-inner {
-  /* width: var(--circle-diameter); */
-  --diameter: var(--circle-diameter);
-  border: 1px solid rgba(var(--rgb-white), 0.05);
-  outline: 0px solid rgba(var(--rgb-white), 0.1);
-  transition: color 175ms ease-in-out, outline 350ms ease-in-out;
-  font-family: var(--ff-bfr-serif);
-  font-size: var(--fs-32);
-}
-.explore-inner:hover {
-  outline: var(--outline-length) solid rgba(var(--rgb-white), 0.1);
-  color: rgba(var(--rgb-dark), 0.5);
+.explore {
+  --diameter: var(--tabMobile-diameter, 272px);
+  outline: transparent 88px rgba(var(--rgb-white), 0);
+  font-size: var(--mobile-font-size, var(--fs-32));
+  border: transparent;
+
+  transition: outline ease-in-out 350ms;
+  flex-shrink: 0;
 }
 
+.explore:hover {
+  outline: solid 88px rgba(var(--rgb-white), 0.1);
+}
+
+.explore span {
+  font-family: var(--ff-bfr-serif);
+}
+
+.explore:hover span {
+  opacity: 0.5;
+}
+
+@media (max-width: 450px) {
+  .explore-mobile {
+    --tabMobile-diameter: 144px;
+    --mobile-font-size: var(--fs-18);
+  }
+}
 /* ------ Pagination: Small ------ */
-.small-pagination {
-  --diameter: var(--pagination-small-diameter);
+
+.smallPagination {
+  --diameter: var(--tablet-pagination-small-diameter, 15px);
+
+  flex-shrink: 0;
+  opacity: 0.25;
+}
+
+.smallPagination:hover {
+  opacity: 0.5;
+}
+.smallPagination-active, .smallPagination-active:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .smallPagination-tablet {
+    --tablet-pagination-small-diameter: 10px;
+  }
+}
+
+/* ------ Pagination: Large ------ */
+.largePagination {
+  --diameter: var(--tablet-pagination-large-diameter, 80px);
+
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  font-size: var(--pagination-large-font-size, var(--fs-32));
+  font-family: var(--ff-bfr-serif);
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  border: 1px solid rgba(var(--rgb-white), 0.25);
+}
+
+.largePagination:hover {
+  border-color: rgba(var(--rgb-white), 1);
+}
+
+@media (max-width: 1000px) {
+  .largePagination-tablet-mobile{
+    --tablet-pagination-large-diameter: 56px;
+    --pagination-large-font-size: var(--fs-24);
+  }
+}
+@media (max-width: 450px) {
+  .largePagination-tablet-mobile {
+    --tablet-pagination-large-diameter: 40px;
+    --pagination-large-font-size: var(--fs-18);
+  }
+}
+
+.pagination {
+  list-style-type: none;
+}
+/* ------   Navigation Menu   ------ */
+/* Navigation logo */
+.navLogo {
+  --gap: calc(var(--sp-800) - 32px);
+
+  align-items: center;
+  flex: 1 0 0;
+}
+.logo {
+  width: fit-content;
+  height: var(--logo-size, 48px);
+}
+.logoLine {
+  width: 100%;
+  height: 1px;
+  
+  position: relative;
+  right: -32px;
+  z-index: 2;
+  
+  opacity: 0.25;
   background-color: var(--clr-white);
 }
 
-.small-pagination-menu {
-  --pagination-gap: var(--sp-500);
+.logo-responsive {
+  padding-left: var(--sp-800);
 }
 
-
-/* ------ Pagination: Large ------ */
-.large-pagination {
-  --diameter: var(--pagination-large-diameter);
-  border: 1px solid rgba(var(--rgb-white), 0.25);
-  font-family: var(--ff-bfr-serif);
-  font-size: var(--font-size);
-}
-.large-pagination:hover { border-color: var(--clr-white); }
-.lp-active { border-color: var(--clr-white); }
-
-.pagination-menu {
-  --gap: var(--pagination-gap);
-  flex-direction: row;
-  align-items: start;
-}
-.large-pagination-menu {
-  --pagination-gap: var(--sp-400);
-  flex-direction: var(--column-if-desktop);
+@media (max-width: 1000px) {
+  .logo-responsive {
+    padding: 0 var(--sp-500);
+  }
+  .navLogo-responsive {
+    max-width: fit-content;
+  }
 }
 
-/* ------   Navigation Menu   ------ */
-.nav-option {
-  font-feature-settings: 'liga' off, 'clig' off;
-  width: var(--nav-width);
-  height: var(--nav-height);
-  align-items: center;
-  justify-content: flex-start;
-  text-decoration: none;
+@media (max-width: 450px) {
+  .logo-responsive {
+    --logo-size: 40px;
+    padding: 0 var(--sp-300);
+  }
 }
-.nav-option::after {
-  width: var(--nav-after-width);
-  height: var(--nav-after-height);
-}
-.nav-option::before {
-  /* Set counter in UL/OL & remove from '.navigation' */
-  counter-increment: nav-count;
-  font-weight: 700;
-  content: "0" counter(nav-count);
-}
-.nav-menu {
-  --gap: var(--sp-600);
-  counter-set: nav-count;
-  min-width: var(--nav-min-width);
-  padding: 0px var(--nav-padding);
-  justify-content: var(--nav-justify);
+
+/* Navigation options */
+
+.navMenu {
+  --gap: var(--navMenu-gap, var(--sp-800));
+
+  counter-set: nav-menu-counter -1;
+
   flex: 1 0 0;
-  background-color: rgba(var(--rgb-white), 0.05);
+  align-items: center;
+  justify-content: flex-end;
+  min-width: var(--navMenu-min-width, 664px);
+  padding: 0 var(--navMenu-padding, var(--sp-800));
+  
   backdrop-filter: blur(40px);
-}
-.nav-bar {
-  --gap: -32px;
-  padding-top: var(--nav-bar-padding-top);
-  width: 100%;
-  justify-content: space-between;
+  background-color: rgba(var(--rgb-white), 0.05);
 }
 
+.navOptions {
+  --navOptions-height: 96px;
 
-.nav-container {
-  --gap: var(--sp-800);
-  width: 100%;
   justify-content: center;
+  align-items: flex-start;
 }
-.logo-container {
-  max-width: var(--logo-container-width);
-  --gap: var(--sp-800);
-  align-items: center;
+
+@media (max-width: 1000px) {
+  .navMenu-responsive {
+    --navMenu-min-width: 448px;
+    --navMenu-gap: var(--sp-600);
+    --navMenu-padding: var(--sp-500);
+  }
+}
+@media (max-width: 450px) {
+  .navOptions-responsive {
+    
+    --nav-mobile-width: 3px;
+    --nav-mobile-height: 100%;
+    --navOptions-height: fit-content;
+
+    width: 222px;
+  }
+  .navMenu-responsive {
+    --gap: var(--sp-400);
+    --navMenu-min-width: fit-content;
+
+    align-self: stretch;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.navOptions span::before {
+  counter-increment: nav-menu-counter;
+  content: "0" counter(nav-menu-counter);
+
+  font-weight: 700;
+  letter-spacing: 2.7px;
+  padding-right: var(--sp-150);
+}
+.navDropdown {
+  height: 100%;
   flex: 1 0 0;
-  margin-left: var(--nav-logo-padding); /* var(--sp-800) */;
+  align-items: center;
+  flex-direction: row-reverse;
 }
-.line-separator {
-  position: relative;
-  right: -32px;
-  flex: var(--nav-line-state) 0 0;
-  height: 3px;
-  background-color: rgba(var(--rgb-white), 0.25);
-  z-index: 2;
+.dropdown-image {
+  width: 24px;
+  height: 21px;
+}
+.navigationTab {
+  width: 100%;
+  align-items: center;
+
+}
+@media (max-width: 450px) {
+  .navigationTab-responsive {
+    padding: var(--sp-300);
+  }
 }
 
 /* ------ Tabs ------ */
-.tab-menu { --gap: var(--sp-400); }
-.tab-option {
-  height: 32px;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 0 0 0;
+.tabOptions {
+  align-items: center;
 }
-.tab-option::after {
-  width: 100%;
-  height: 3px;
+.destinationTabMenu {
+  --gap: var(--sp-400);
+
+  align-items: flex-start;
 }
