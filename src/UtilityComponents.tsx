@@ -7,7 +7,7 @@ import { CurrentDeviceSize, mobile, tablet } from "./Store";
  *
  * children: JSX.ELement to be rendered within the context provision
  */
-export const CurrentDevice = ({ children }: { children: JSX.Element }) => {
+export const CurrentDevice = ({ children }: { children: JSX.Element[] | JSX.Element }) => {
   const [deviceType, setDeviceType] = useState<string>("Desktop");
   const deviceTablet: boolean = useMediaQuery(tablet);
   const deviceMobile: boolean = useMediaQuery(mobile);

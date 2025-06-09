@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { CurrentDeviceSize } from "../../Store";
+import { CurrentDeviceSize } from "../../../Store";
+import "./UtilityOptions.css";
 
 /* interface MyProps {
   navPage: string;

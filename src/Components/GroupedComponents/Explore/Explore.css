@@ -1,0 +1,33 @@
+/* ------   Explore Button   ------ */
+.explore {
+  --diameter: var(--tabMobile-diameter, 272px);
+  outline: transparent 88px rgba(var(--rgb-white), 0);
+  font-size: var(--mobile-font-size, var(--fs-32));
+  border: transparent;
+
+  transition: outline ease-in-out 350ms;
+  flex-shrink: 0;
+}
+
+.explore:hover {
+  outline: solid 88px rgba(var(--rgb-white), 0.1);
+}
+
+.explore-link {
+  text-decoration: none;
+  color: inherit;
+}
+.explore span {
+  font-family: var(--ff-bfr-serif);
+}
+
+.explore:hover span {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 730px) {
+  .explore-mobile {
+    --tabMobile-diameter: 144px;
+    --mobile-font-size: var(--fs-18);
+  }
+}

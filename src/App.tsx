@@ -1,18 +1,18 @@
-
 import "./App.css";
-import "./Components/Components.css";
-import CompTest from "./CompTest";
+import NavigationTab from "./Components/GroupedComponents/Navigation/NavigationTab";
+import MainPage from "./MainPage/MainPage";
 import { CurrentDevice } from "./UtilityComponents";
 
-
 function App() {
-
   return (
     <>
-    <CurrentDevice>
-      <CompTest />
-    </CurrentDevice>
-
+      <CurrentDevice>
+        <NavigationTab />
+        <MainPage />
+        {/*
+         */}
+        {/* <CompTest /> */}
+      </CurrentDevice>
     </>
   );
 }

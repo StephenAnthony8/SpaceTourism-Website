@@ -1,0 +1,75 @@
+/* Navigation options */
+.navDropdown {
+  height: 100%;
+  flex: 1 0 0;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.dropdown-image {
+  width: 24px;
+  height: 21px;
+}
+
+/* NavigationTab */
+.navigationTab {
+  width: 100%;
+  align-items: center;
+}
+
+.navigationTab-responsive {
+  padding-top: var(--sp-500);
+}
+
+@media screen and (max-width: 1000px) {
+  .navigationTab-responsive {
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 730px) {
+  .navigationTab-responsive {
+    padding: var(--sp-300);
+  }
+}
+
+/* Navigation logo */
+.navLogo {
+  --gap: calc(var(--sp-800) - 32px);
+
+  align-items: center;
+  flex: 1 0 0;
+}
+.logo {
+  width: fit-content;
+  height: var(--logo-size, 48px);
+}
+.logoLine {
+  width: 100%;
+  height: 1px;
+
+  position: relative;
+  right: -32px;
+  z-index: 2;
+
+  opacity: 0.25;
+  background-color: var(--clr-white);
+}
+
+.logo-responsive {
+  padding-left: var(--sp-800);
+}
+
+@media screen and (max-width: 1000px) {
+  .logo-responsive {
+    padding: 0 var(--sp-500);
+  }
+  .navLogo-responsive {
+    max-width: fit-content;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .logo-responsive {
+    --logo-size: 40px;
+    padding: 0 var(--sp-300);
+  }
+}

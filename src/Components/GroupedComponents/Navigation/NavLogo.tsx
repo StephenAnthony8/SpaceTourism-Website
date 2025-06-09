@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CurrentDeviceSize } from "../../Store";
+import { CurrentDeviceSize } from "../../../Store";
 
 /**
  * NavLogo: renders the Logo + Line section of the Navigation Tab

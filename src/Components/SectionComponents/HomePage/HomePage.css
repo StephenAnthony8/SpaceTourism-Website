@@ -1,0 +1,90 @@
+/* HeroSection */
+.homepage {
+  padding: var(--herosection-padding-top-bottom, var(--sp-1600))
+    var(--herosection-padding-left-right, 0); /* tab: --sp--sp-500;  */
+  max-width: 80%;
+
+  flex: 1 0 0;
+  align-self: stretch;
+  align-items: flex-end;
+  justify-content: center;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.herosection-content {
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.herosection-explore {
+  max-width: 540px;
+  padding: 88px;
+  flex: 1 0 0;
+}
+.herosection-text {
+  --gap: var(--sp-300);
+
+  max-width: 540px;
+  flex-direction: column;
+}
+.text-area1 {
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(--text-1-size, var(--fs-28)); /* tab: 28px; mobile: 16px */
+  letter-spacing: var(--text-1-spacing, var(--ls-4)); /*  mobile: 2px */
+}
+.space-text {
+  font-size: var(--space-text-size, var(--fs-144)); /* mobile: 80px */
+}
+.text-area2 {
+  font-family: var(--ff-bwr-sans);
+  font-size: var(--text-2-size, var(--fs-18)); /* tab & mobile: 16px  */
+  line-height: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .homepage-responsive {
+    --herosection-direction: column;
+    --herosection-padding-left-right: var(--sp-500);
+  }
+  .herosection-content-responsive {
+    align-self: stretch;
+    flex-direction: column;
+  }
+  .herosection-text-responsive {
+    --text-1-size: var(--fs-28);
+    --text-2-size: var(-fs-16);
+
+    text-align: center;
+  }
+  /* 
+    .herosection-explore-responsive {}
+    
+    .text-area1-responsive {}
+    .text-area2-responsive {}
+    */
+}
+@media screen and (max-width: 600px) {
+  .herosection-responsive {
+    --herosection-direction: column;
+    --herosection-padding-top-bottom: var(--sp-300);
+    --herosection-padding-left-right: var(--sp-300);
+  }
+
+  .herosection-text-responsive {
+    --text-1-size: var(--fs-16);
+    --text-2-size: var(-fs-16);
+    --space-text-size: var(--fs-80);
+    --text-1-spacing: var(--ls-2);
+
+    text-align: center;
+  }
+  /* 
+    .herosection-content-responsive {
+    }
+    .herosection-explore-responsive {}
+    .text-area1-responsive {}
+    
+    .text-area2-responsive {}
+    */
+}

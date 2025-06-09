@@ -1,0 +1,41 @@
+/*
+    --------------
+    Component Utility Classes
+     - change select color for nav
+     - Variables: height, width
+    --------------
+*/
+.select-state::after,
+.select-state-active::after {
+  content: "";
+  position: absolute;
+  height: var(--select-state-height, 3px);
+  width: var(--select-state-width, 100%);
+  /* transition: background-color 250ms ease-in-out; */
+}
+.select-state:hover::after {
+  background-color: rgba(var(--rgb-white), 0.5);
+}
+
+.select-state-active::after {
+  background-color: rgba(var(--rgb-white), 1);
+}
+
+/* Nav & Tab Options generator class */
+.utilityOptions {
+  --gap: var(--utility-gap, var(--sp-100));
+  height: var(--navOptions-height, 32px);
+
+  position: relative;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(--utility-font-size, var(--fs-16));
+  letter-spacing: var(--ls-2);
+  line-height: normal;
+}
+.utilityOptions::after {
+  --select-state-height: var(--nav-mobile-height, 3px);
+  --select-state-width: var(--nav-mobile-width, 100%);
+}

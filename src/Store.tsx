@@ -25,7 +25,7 @@ export interface currentDevice {
   maxWidth?: number;
   minWidth?: number;
 }
-export const mobile: currentDevice = { maxWidth: 600 };
+export const mobile: currentDevice = { maxWidth: 730 };
 export const tablet: currentDevice = { maxWidth: 1000 };
 /* export const desktop: currentDevice = { minWidth: 1001 }; */
 

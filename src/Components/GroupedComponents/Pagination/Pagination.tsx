@@ -1,12 +1,13 @@
-interface Props {
-  renderType: string;
-  paginationOptions: number[];
-}
 
 import React, { useState } from "react";
 import LargePaginationOptions from "./LargePaginationOptions";
 import SmallPaginationOptions from "./SmallPaginationOptions";
+import "./Pagination.css";
 
+interface Props {
+  renderType: string;
+  paginationOptions: number[];
+}
 /**
  * Pagination: renders either pagination menu based on renderType
  * 

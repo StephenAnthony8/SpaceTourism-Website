@@ -5,13 +5,13 @@
 */
 
 .test {
-    min-width: 100%;
-    min-height: 100vh;
-    /* position: relative; */
+  min-width: 100%;
+  min-height: 100vh;
+  /* position: relative; */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*
@@ -20,13 +20,18 @@
     --------------
 */
 body {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-    font-family: var(--ff-bwr-sans);
-    line-height: var(--lh-9);
-    letter-spacing: var(--ls-0);
-    font-weight: 400;
-
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  font-family: var(--ff-bwr-sans);
+  line-height: var(--lh-9);
+  letter-spacing: var(--ls-0);
+  font-weight: 400;
+}
+#root {
+    gap: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /*
@@ -36,14 +41,30 @@ body {
 */
 
 .flex-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .circle {
-    border-radius: 100%;
-    width: var(--diameter);
-    height: var(--diameter);
+  border-radius: 100%;
+  width: var(--diameter);
+  height: var(--diameter);
 }
 
-.position-bottom::after {  bottom: 0;  }
-.position-right::after {   right: 0;   }
+.position-bottom::after {
+  bottom: 0;
+}
+.position-right::after {
+  right: 0;
+}
+.font-features-off {
+  font-feature-settings: "liga" off, "clig" off;
+}
+
+.grid-position {
+    grid-row: var(--row-start-row-end);
+    grid-column: var(--column-start-column-end);
+}
+
+.flex-grow {
+  flex: 1 0 0;
+}

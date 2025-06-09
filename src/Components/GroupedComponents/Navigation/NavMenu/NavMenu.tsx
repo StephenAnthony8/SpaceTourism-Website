@@ -1,5 +1,6 @@
 import { useState } from "react";
-import UtilityOptions from "../Utilities/UtilityOptions";
+import UtilityOptions from "../../Utilities/UtilityOptions";
+import "./NavMenu.css";
 
 /**
  * NavMenu: Renders the Menu options section of the navigation section

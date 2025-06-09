@@ -9,7 +9,7 @@
  *
  * setActive: sets the icon state
  */
-export default function NavDropdown(/* {active, setActive}: Props */) {
+export default function NavDropdown() {
   return (
     <div className="navDropdown flex">
       <img

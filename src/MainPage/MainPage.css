@@ -1,0 +1,6 @@
+/* MainPage */
+.mainpage {
+  align-self: stretch;
+  justify-content: center;
+  flex: 1 0 0;
+}

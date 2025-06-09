@@ -1,0 +1,16 @@
+
+/* ------ Tabs ------ */
+.tabOptions {
+  align-items: center;
+}
+.destinationTabMenu {
+  --gap: var(--sp-400);
+
+  align-items: flex-start;
+}
+@media screen and (max-width: 1000px) {
+  
+  .destinationTab-responsive {
+    --utility-font-size: var(--fs-14);
+  }
+}
