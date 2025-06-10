@@ -1,0 +1,184 @@
+/*
+ * DestinationPage.css
+ *
+ * Styles for the DestinationPage component in the Space Tourism website.
+ */
+
+/* --- Destination Page --- */
+.destination-page {
+  --gap: var(--sp-300);
+  --justify-content: var(
+    --destination-page-justify,
+    flex-start
+  ); /* Tab: flex-start, Mobile: center */
+  max-width: 80%; /* Tab/Mobile: 100% */
+  flex-direction: column;
+  --align-items: flex-start;
+
+  padding: var(--destination-page-padding, var(--sp-600))
+    var(--destination-page-padding, 0px); /* Tab: --sp-500, Mobile: --sp-300 */
+}
+@media screen and (max-width: 1000px) {
+  .destination-page-responsive {
+    max-width: 100%;
+    --destination-page-padding: var(--sp-500);
+  }
+}
+@media screen and (max-width: 600px) {
+  .destination-page-responsive {
+    --destination-page-padding: var(--sp-300);
+    --destination-page-justify: center;
+    --align-items: center;
+  }
+}
+
+/* --- Component: Destination Page Title  --- */
+.destination-page-title {
+  --gap: var(--sp-300);
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(
+    --destination-page-title-font-size,
+    var(--fs-28)
+  ); /* Tab: 28px, Mobile: 16px */
+  letter-spacing: var(
+    --destination-page-title-letter-spacing,
+    var(--ls-4)
+  ); /* Mobile: 2px */
+}
+
+.destination-page-title b {
+  opacity: 0.25;
+}
+@media screen and (max-width: 1000px) {
+  .destination-page-title-responsive {
+    --destination-page-title-font-size: var(--fs-20);
+    --destination-page-title-letter-spacing: var(--ls-2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .destination-page-title-responsive {
+    --destination-page-title-font-size: var(--fs-16);
+  }
+}
+/* --- Component: Content Section  --- */
+.destination-content {
+  --gap: var(--destination-content-gap, var(--sp-500)); /* Tab/mobile: sp-300 */
+  --flex: auto;
+  --align-items: var(--destination-content-align, flex-start);
+
+  justify-content: flex-start;
+  max-width: 450px; /* Tab/Mobile: 514px */
+  flex-direction: column;
+}
+.destination-content-title {
+  font-family: var(--ff-bfr-serif);
+  font-size: var(
+    --content-exploration-size,
+    var(--fs-96)
+  ); /* Tab: 80px, Mobile: 56px */
+}
+.destination-content-explanation {
+  font-family: var(--ff-bwr-sans);
+  font-size: var(--content-explanation-size, var(--fs-18)); /* Tab: 16px */
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  opacity: 0.25;
+}
+.destination-content-container {
+  flex: 0;
+}
+.destination-content-info {
+  --gap: var(--sp-300);
+}
+.distance-travel-info {
+  --gap: 12px;
+  flex-direction: column;
+  flex: 1 0 0;
+  justify-content: center;
+}
+.distance-header {
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(--fs-14);
+  letter-spacing: var(--ls-2);
+}
+
+.distance-header + p {
+  font-family: var(--ff-bfr-serif);
+  font-size: var(--fs-28);
+}
+
+@media screen and (max-width: 1000px) {
+  .destination-content-responsive {
+    --destination-content-gap: var(--sp-300);
+    --destination-content-align: center;
+    --content-explanation-size: var(--fs-16);
+
+    align-self: center;
+
+    max-width: 514px;
+
+    text-align: center;
+  }
+  .destination-content-title-responsive {
+    font-size: var(--fs-80); /* 80px */
+  }
+
+  .distance-travel-info-responsive {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .destination-content-title-responsive {
+    font-size: var(--fs-56);
+  }
+  .destination-content-container-responsive {
+    flex-direction: column;
+  }
+}
+
+/* Component: Container Section */
+.destination-page-container {
+  --gap: var(--sp-400);
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.destination-image {
+  display: flex;
+  width: var(--destination-image-sides, 588px); /* Tab: 368px, Mobile: 184px */
+  height: var(--destination-image-sides, 588px); /* Tab: 368px, Mobile: 184px */
+  justify-content: center;
+  align-items: center;
+}
+.destination-image img {
+  max-width: 480px;
+  max-height: 480px;
+}
+
+/* desktop: 480| tab: 300 | mobile: 150px */
+@media screen and (max-width: 1000px) {
+    .destination-page-container-responsive {
+        flex-direction: column;
+        align-items: center;
+    }
+  .destination-image-responsive {
+    --destination-image-sides: 368px;
+  }
+  .destination-image img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .destination-image-responsive {
+    --destination-image-sides: 184px;
+  }
+  .destination-image img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}

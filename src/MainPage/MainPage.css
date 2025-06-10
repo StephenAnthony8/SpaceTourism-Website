@@ -1,6 +1,7 @@
 /* MainPage */
 .mainpage {
+  min-height: fit-content;
   align-self: stretch;
   justify-content: center;
-  flex: 1 0 0;
+  flex: 1;
 }

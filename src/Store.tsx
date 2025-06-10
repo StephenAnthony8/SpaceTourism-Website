@@ -31,3 +31,20 @@ export const tablet: currentDevice = { maxWidth: 1000 };
 
 /* Context Provider - Device Size {store in variable "deviceSize"*/
 export const CurrentDeviceSize: React.Context<string> = createContext("");
+
+/* 
+commonly recommended screen sizes
+
+- **Mobile:**  
+  320px – 480px (small phones)  
+  481px – 767px (large phones)
+
+- **Tablet:**  
+  768px – 1024px
+
+- **Laptop/Small Desktop:**  
+  1025px – 1440px
+
+- **Large Desktop:**  
+  1441px and above
+*/

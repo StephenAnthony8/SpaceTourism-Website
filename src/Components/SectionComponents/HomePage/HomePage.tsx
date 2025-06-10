@@ -1,13 +1,25 @@
 import Explore from "../../GroupedComponents/Explore/Explore";
 import "./HomePage.css";
+
+/**
+ * HomePage component for the Space Tourism website.
+ * Displays the hero section with introductory text and an Explore button.
+ *
+ * @returns {JSX.Element} The rendered HomePage component.
+ */
+
 export default function HomePage() {
   return (
     <section className="homepage homepage-responsive flex">
       <div className="herosection-content herosection-content-responsive flex">
         <article className="herosection-text herosection-text-responsive  half-width flex">
-          <p className="text-area1 text-area1-responsive upper text-blue">SO, YOU WANT TO TRAVEL TO</p>
+          <p className="text-area1 text-area1-responsive upper text-blue">
+            SO, YOU WANT TO TRAVEL TO
+          </p>
 
-          <h1 className="space-text space-text-responsive upper text-white">Space</h1>
+          <h1 className="space-text space-text-responsive upper text-white">
+            Space
+          </h1>
 
           <p className="text-area2 text-area2-responsive text-blue">
             Let’s face it; if you want to go to space, you might as well

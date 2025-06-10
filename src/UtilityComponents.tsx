@@ -1,13 +1,27 @@
+/**
+ * UtilityComponents.tsx
+ *
+ * Provides utility React components and context providers for the Space Tourism website.
+ * Includes device context and responsive utilities for child components.
+ */
+
 import { useEffect, useState, type JSX } from "react";
 import { useMediaQuery } from "react-responsive";
 import { CurrentDeviceSize, mobile, tablet } from "./Store";
 
 /**
- * CurrentDevice: Uses ContextProvider 'CurrentDeviceSize' to provide mediaQuery size to components
+ * CurrentDevice component for the Space Tourism website.
+ * Provides the current device type (Mobile, Tablet, Desktop) to child components using the CurrentDeviceSize ContextProvider and media queries.
  *
- * children: JSX.ELement to be rendered within the context provision
+ * @param {object} props - The component props.
+ * @param {JSX.Element|JSX.Element[]} props.children - Elements to be rendered within the context provider.
+ * @returns {JSX.Element} The rendered CurrentDevice context provider.
  */
-export const CurrentDevice = ({ children }: { children: JSX.Element[] | JSX.Element }) => {
+export const CurrentDevice = ({
+  children,
+}: {
+  children: JSX.Element[] | JSX.Element;
+}): JSX.Element => {
   const [deviceType, setDeviceType] = useState<string>("Desktop");
   const deviceTablet: boolean = useMediaQuery(tablet);
   const deviceMobile: boolean = useMediaQuery(mobile);
