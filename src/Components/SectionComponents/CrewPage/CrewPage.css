@@ -1,0 +1,123 @@
+/*
+ * CrewPage.css
+ *
+ * Styles for the CrewPage component in the Space Tourism website.
+ */
+
+/* Component: Crew Content */
+.crew-content-container {
+    --gap: var(--sp-300);
+
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    max-width: 640px;
+    
+    flex: 1 0 0;
+}
+.crew-content-title {
+    justify-content: flex-end;
+    align-items: var( --crew-content-align, flex-start);/* Tab: center */
+
+    padding-top: var(--sp-500);
+}
+
+.crew-content-pagination-explanation{
+    --gap: var(--sp-300); 
+    justify-content: space-between;
+    align-items: var( --crew-content-align, flex-start);/* Tab: center */
+}
+
+.crew-content-title {
+    --gap: var(--sp-200);
+    font-family: var(--ff-bfr-serif);
+}
+
+.crew-content-label {
+    font-size: var(--crew-label-size, var(--fs-32)); /* tab: 24px | mobile: 18px */
+    opacity: 0.5;
+}
+
+.crew-content-name {
+    font-size: var(--crew-name-size, var(--fs-56)); /* tab: 40px | mobile: 24px */
+}
+
+@media screen and (max-width: 1000px) {
+    .crew-content-container-responsive {
+        text-align: center;
+        --crew-content-align: center;
+        --crew-label-size: var(--fs-24);
+        --crew-name-size: var(--fs-40);
+    }
+}
+@media screen and (max-width: 600px) {
+    .crew-content-container-responsive {
+        
+        --crew-label-size: var(--fs-18);
+        --crew-name-size: var(--fs-32);
+    }
+}
+
+/* Component: Crew Page Image */
+.crew-image {
+    --gap: var(--sp-300);
+
+    max-width: var(--crew-page-width, 501px); /* tab: 415px | mobile: 252px */
+    max-height: var(--crew-page-height, 723px); /* tab: 600px | 363px */
+
+}
+@media screen and (max-width: 1000px) {
+    .crew-image-responsive {
+        max-width: var(--crew-page-width, 415px); /* tab: 415px | mobile: 252px */
+        max-height: var(--crew-page-height, 600px); /* tab: 600px | 363px */
+    }
+}
+@media screen and (max-width: 600px) {
+    .crew-image-responsive {
+        max-width: var(--crew-page-width, 252px); /* tab: 415px | mobile: 252px */
+        max-height: var(--crew-page-height, 363px); /* tab: 600px | 363px */
+    }
+    
+}
+
+/* Component: Crew Page Container */
+.crew-page-container {
+    --gap: var(--sp-400);
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    flex: 1 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .crew-page-container {
+        flex-direction: column;
+    }
+}
+
+
+/* Section: CrewPage */
+.crew-page {
+    --gap: var(--sp-300);
+    margin: var(--sp-600) 0px;
+
+    flex-direction: column;
+    align-items: var(--crew-page-align, flex-start);
+    justify-content: space-between;
+    max-width: 70%;
+}
+
+@media scree  and (max-width: 1000px) {
+    .crew-page-responsive {
+        flex: 0;
+        margin: var(--sp-500);
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .crew-page-responsive {
+        margin: var(--sp-300);
+        --crew-page-align: center;
+    }
+}

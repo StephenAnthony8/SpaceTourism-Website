@@ -5,3 +5,37 @@
   justify-content: center;
   flex: 1;
 }
+
+/* Utility Components */
+.section-page-title {
+  --gap: var(--sp-300);
+  font-family: var(--ff-bwc-sans-cond);
+  font-size: var(
+    --destination-page-title-font-size,
+    var(--fs-28)
+  ); /* Tab: 28px, Mobile: 16px */
+  letter-spacing: var(
+    --destination-page-title-letter-spacing,
+    var(--ls-4)
+  ); /* Mobile: 2px */
+}
+.section-page-title b {
+  opacity: 0.25;
+}
+
+.section-content-explanation {
+  font-family: var(--ff-bwr-sans);
+  font-size: var(--content-explanation-size, var(--fs-18)); /* Tab: 16px */
+}
+@media screen and (max-width: 1000px) {
+  .section-page-title-responsive {
+    --destination-page-title-font-size: var(--fs-20);
+    --destination-page-title-letter-spacing: var(--ls-2);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section-page-title-responsive {
+    --destination-page-title-font-size: var(--fs-16);
+  }
+}

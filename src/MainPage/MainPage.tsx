@@ -1,6 +1,7 @@
 import "./MainPage.css";
 /* import HomePage from "../Components/SectionComponents/HomePage/HomePage"; */
-import DestinationPage from "../Components/SectionComponents/HomePage/DestinationPage/DestinationPage";
+import DestinationPage from "../Components/SectionComponents/DestinationPage/DestinationPage";
+import CrewPage from "../Components/SectionComponents/CrewPage/CrewPage";
 
 /**
  * MainPage component for the Space Tourism website.
@@ -19,7 +20,9 @@ export default function MainPage() {
   return (
     <main className="mainpage flex">
       {/* <HomePage /> */}
-      <DestinationPage />
+      {/* <DestinationPage /> */}
+      <CrewPage />
+      {/* <TechnologyPage /> */}
     </main>
   );
 }

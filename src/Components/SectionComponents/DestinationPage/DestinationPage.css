@@ -77,10 +77,10 @@
     var(--fs-96)
   ); /* Tab: 80px, Mobile: 56px */
 }
-.destination-content-explanation {
+/* .destination-content-explanation {
   font-family: var(--ff-bwr-sans);
-  font-size: var(--content-explanation-size, var(--fs-18)); /* Tab: 16px */
-}
+  font-size: var(--content-explanation-size, var(--fs-18)); 
+} */
 .divider {
   width: 100%;
   height: 1px;
