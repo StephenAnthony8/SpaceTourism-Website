@@ -1,6 +1,7 @@
 import "./DestinationPage.css";
 
 import DestinationTabMenu from "../../GroupedComponents/DestinationTabMenu/DestinationTabMenu";
+import { UtilitySectionExplanation, UtilitySectionTitle } from "../UtilitySectionComponents";
 
 /**
  * DestinationPage component for the Space Tourism website.
@@ -10,11 +11,12 @@ import DestinationTabMenu from "../../GroupedComponents/DestinationTabMenu/Desti
  */
 export default function DestinationPage() {
   return (
-    <section className="destination-page destination-page-responsive text-blue flex-container">
-      <h2 className="section-page-title section-page-title-responsive text-white normal-font-settings upper flex">
-        {/* Include json number & title here */}
-        <b>01</b>PICK YOUR DESTINATION
-      </h2>
+    <section className="destination-page section-page section-page-responsive text-blue flex-container">
+
+      <UtilitySectionTitle 
+      pageNumber="1" 
+      pageTitle="PICK YOUR DESTINATION" 
+      />
       <div className="destination-page-container destination-page-container-responsive flex">
         <aside className="destination-image destination-image-responsive flex">
           {/* Include JSON Image & correct alt description */}
@@ -36,18 +38,16 @@ export default function DestinationPage() {
  * @returns {JSX.Element} The rendered DestinationContent component.
  */
 function DestinationContent() {
+  const explanationText = "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
+
+
   return (
     <div className="destination-content destination-content-responsive  normal-font-settings flex-container">
       <DestinationTabMenu />
       {/* COntent name - (Moon, Mars, Europa, etc) */}
       <h1 className="destination-content-title destination-content-title-responsive upper">Moon</h1>
       {/* Content description */}
-      <p className="section-content-explanation">
-        See our planet as you’ve never seen it before. A perfect relaxing trip
-        away to help regain perspective and come back refreshed. While you’re
-        there, take in some history by visiting the Luna 2 and Apollo 11 landing
-        sites.
-      </p>
+      <UtilitySectionExplanation {...{ explanationText }} />
       <div className="divider bg-white"></div>
       <aside className="destination-content-container destination-content-container-responsive  upper normal-font-settings  flex-container">
         <div className="distance-travel-info distance-travel-info-responsive flex">

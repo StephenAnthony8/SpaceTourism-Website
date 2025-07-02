@@ -5,32 +5,7 @@
  */
 
 /* --- Destination Page --- */
-.destination-page {
-  --gap: var(--sp-300);
-  --justify-content: var(
-    --destination-page-justify,
-    flex-start
-  ); /* Tab: flex-start, Mobile: center */
-  max-width: 80%; /* Tab/Mobile: 100% */
-  flex-direction: column;
-  --align-items: flex-start;
-
-  padding: var(--destination-page-padding, var(--sp-600))
-    var(--destination-page-padding, 0px); /* Tab: --sp-500, Mobile: --sp-300 */
-}
-@media screen and (max-width: 1000px) {
-  .destination-page-responsive {
-    max-width: 100%;
-    --destination-page-padding: var(--sp-500);
-  }
-}
-@media screen and (max-width: 600px) {
-  .destination-page-responsive {
-    --destination-page-padding: var(--sp-300);
-    --destination-page-justify: center;
-    --align-items: center;
-  }
-}
+.destination-page {}
 
 /* --- Component: Destination Page Title  --- */
 .destination-page-title {

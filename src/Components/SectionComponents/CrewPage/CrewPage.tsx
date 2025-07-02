@@ -1,6 +1,11 @@
+import type { JSX } from "react";
 import Pagination from "../../GroupedComponents/Pagination/Pagination";
+import {
+  UtilitySectionExplanation,
+  UtilitySectionHeading,
+  UtilitySectionTitle,
+} from "../UtilitySectionComponents";
 import "./CrewPage.css";
-
 /**
  * CrewPage component for the Space Tourism website.
  * Displays crew details, including a title, crew member image, and content with pagination.
@@ -8,21 +13,24 @@ import "./CrewPage.css";
  * @returns {JSX.Element} The rendered CrewPage component.
  */
 
-export default function CrewPage() {
+export default function CrewPage(): JSX.Element {
+  const pageNumber = "2";
+  const pageTitle = "MEET YOUR CREW";
+  const pageImage = "/assets/crew/image-mark-shuttleworth.png"; // Image path for the crew member
+  // Image alt text for accessibility
+  const imageAltText = "Mark ShuttleWorth" + " Image";
+
   return (
-    <section className="crew-page crew-page-responsive text-white flex-container normal-font-settings">
-      {/* 
-        */}
-      <h2 className="section-page-title upper flex">
-        <b>02</b>MEET YOUR CREW
-      </h2>
+    <section className="crew-page section-page section-page-responsive text-blue flex-container ">
+      {/* UtilitySectionTitle renders the page number and title */}
+      <UtilitySectionTitle {...{ pageNumber, pageTitle }} />
       <div className="crew-page-container flex">
         <CrewContent />
-        <aside className="crew-page-image flex">
+        <aside className="crew-page-image fade-img flex">
           <img
-            src="/assets/crew/image-mark-shuttleworth.png"
-            alt="Mark ShuttleWorth Image"
-            className="crew-image crew-image-responsive fade-img"
+            src={pageImage}
+            alt={imageAltText}
+            className="crew-image crew-image-responsive"
           />
         </aside>
       </div>
@@ -37,20 +45,21 @@ export default function CrewPage() {
  * @returns {JSX.Element} The rendered CrewContent component.
  */
 
-function CrewContent() {
+function CrewContent(): JSX.Element {
+  const name = "Mark Shuttleworth";
+  const label = "Mission Specialist";
+  const explanationText =
+    "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.";
+  const renderType = "small"; // Pagination type for small pagination controls
+  const paginationOptions = [1, 2, 3, 4]; // Pagination options for crew members
+
   return (
     <div className="crew-content-container crew-content-container-responsive flex text-white">
-      <div className="crew-content-title subcontainer flex">
-        <h3 className="crew-content-label upper">Mission Specialist</h3>
-        <h1 className="crew-content-name upper">Mark Shuttleworth</h1>
-      </div>
+      {/* UtilitySectionHeading renders the crew member's name and label */}
+      <UtilitySectionHeading {...{ label, name }} />
       <div className="crew-content-pagination-explanation subcontainer flex">
-        <p className="section-content-explanation text-blue">
-          Mark Richard Shuttleworth is the founder and CEO of Canonical, the
-          company behind the Linux-based Ubuntu operating system. Shuttleworth
-          became the first South African to travel to space as a space tourist.
-        </p>
-        <Pagination renderType="small" paginationOptions={[1, 2, 3, 4]} />
+        <UtilitySectionExplanation {...{ explanationText }} />
+        <Pagination {...{ renderType, paginationOptions }} />
       </div>
     </div>
   );

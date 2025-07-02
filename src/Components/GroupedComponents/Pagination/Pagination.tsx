@@ -23,7 +23,7 @@ export default function Pagination({renderType, paginationOptions}: Props) {
   const RenderPagination: React.FC = (renderType === "small" ? SmallPaginationOptions : LargePaginationOptions);
 
   return (
-    <nav className="pagination flex">
+    <nav className={`pagination ${renderType === "large" ? "pagination-direction" : ""} flex`}>
       {paginationOptions.map((currentPage) => (
         <RenderPagination {...{ currentPage, active, setActive }} 
         key={currentPage}

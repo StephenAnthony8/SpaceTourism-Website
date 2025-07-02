@@ -54,4 +54,21 @@
 
 .pagination {
   list-style-type: none;
+  max-height: fit-content;
+  max-width: fit-content;
+
 }
+
+/* To be modified */
+.pagination-direction {
+  --gap: var(--sp-400); /* Tab: --sp-200 */
+  flex-direction: column; /* Tab: row */
+}
+
+@media screen and (max-width: 1000px) {
+  .pagination-direction {
+    --pagination-direction-gap: var(--sp-200);
+    flex-direction: row;
+  }
+}
+
