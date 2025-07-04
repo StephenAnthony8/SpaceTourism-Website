@@ -1,7 +1,12 @@
 import "./DestinationPage.css";
 
 import DestinationTabMenu from "../../GroupedComponents/DestinationTabMenu/DestinationTabMenu";
-import { UtilitySectionExplanation, UtilitySectionTitle } from "../UtilitySectionComponents";
+import {
+  UtilitySectionExplanation,
+  UtilitySectionTitle,
+} from "../UtilitySectionComponents";
+import { useState, type JSX } from "react";
+import { destinationData, type PageProps } from "../../../Store";
 
 /**
  * DestinationPage component for the Space Tourism website.
@@ -9,23 +14,35 @@ import { UtilitySectionExplanation, UtilitySectionTitle } from "../UtilitySectio
  *
  * @returns {JSX.Element} The rendered DestinationPage component.
  */
-export default function DestinationPage() {
+export default function DestinationPage(): JSX.Element {
+  /* Entries */
+  /**
+   * selected: The currently selected destination index.
+   * setSelected: Function to update the selected destination index.
+   * destinationData: Data for the destinations, including name, description, distance, travel time, and images. 
+   
+   Useage
+   * destinationData[selected].option
+
+   Options
+   * images.webp - images
+   * name - destination name
+   * description - destination description
+   * distance & travel - destination distance & travel
+   */
+  const [selected, setSelected] = useState<number>(0);
   return (
     <section className="destination-page section-page section-page-responsive text-blue flex-container">
-
-      <UtilitySectionTitle 
-      pageNumber="1" 
-      pageTitle="PICK YOUR DESTINATION" 
-      />
+      <UtilitySectionTitle pageNumber="1" pageTitle="PICK YOUR DESTINATION" />
       <div className="destination-page-container destination-page-container-responsive flex">
         <aside className="destination-image destination-image-responsive flex">
-          {/* Include JSON Image & correct alt description */}
+          {/* JSON Image & alt description */}
           <img
-            src="/assets/destination/image-moon.webp"
-            alt="Image of the Moon"
+            src={destinationData[selected].images.webp}
+            alt={destinationData[selected].name + " image"}
           />
         </aside>
-        <DestinationContent />
+        <DestinationContent {...{ selected, setSelected }} />
       </div>
     </section>
   );
@@ -37,28 +54,29 @@ export default function DestinationPage() {
  *
  * @returns {JSX.Element} The rendered DestinationContent component.
  */
-function DestinationContent() {
-  const explanationText = "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
-
-
+function DestinationContent({ selected, setSelected }: PageProps): JSX.Element {
   return (
     <div className="destination-content destination-content-responsive  normal-font-settings flex-container">
-      <DestinationTabMenu />
-      {/* COntent name - (Moon, Mars, Europa, etc) */}
-      <h1 className="destination-content-title destination-content-title-responsive upper">Moon</h1>
+      <DestinationTabMenu {...{ selected, setSelected }} />
+      {/* Content name - (Moon, Mars, Europa, etc) */}
+      <h1 className="destination-content-title destination-content-title-responsive upper">
+        {destinationData[selected].name}
+      </h1>
       {/* Content description */}
-      <UtilitySectionExplanation {...{ explanationText }} />
+      <UtilitySectionExplanation
+        explanationText={destinationData[selected].description}
+      />
       <div className="divider bg-white"></div>
       <aside className="destination-content-container destination-content-container-responsive  upper normal-font-settings  flex-container">
         <div className="distance-travel-info distance-travel-info-responsive flex">
           <h2 className="distance-header text-blue">Avg. distance</h2>
-          {/* Include JSON distance */}
-          <p>384,400 km</p>
+          {/* distance */}
+          <p>{destinationData[selected].distance}</p>
         </div>
         <div className="distance-travel-info distance-travel-info-responsive flex">
           <h2 className="distance-header text-blue">est. travel time</h2>
-          {/* Include JSON travel time */}
-          <p>3 days</p>
+          {/* travel time */}
+          <p>{destinationData[selected].travel}</p>
         </div>
       </aside>
     </div>

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { type JSX } from "react";
 import UtilityOptions from "../Utilities/UtilityOptions";
 import "./DestinationTab.css";
+import type { PageProps } from "../../../Store";
 /* interface Props {
   menuOptions: {
     id: number,
@@ -12,13 +13,13 @@ import "./DestinationTab.css";
  *
  * MenuOptions: Options to be generated
  */
-export default function DestinationTabMenu() {
-  const [selected, setSelected] = useState<number | null>(null);
+export default function DestinationTabMenu({ selected, setSelected }: PageProps): JSX.Element {
+  /* const [selected, setSelected] = useState<number | null>(0); */
   const menuOptions = [
-    { id: 1, option: "Moon" },
-    { id: 2, option: "Mars" },
-    { id: 3, option: "Europa" },
-    { id: 4, option: "Titan" },
+    { id: 0, option: "Moon" },
+    { id: 1, option: "Mars" },
+    { id: 2, option: "Europa" },
+    { id: 3, option: "Titan" },
   ];
   const optionClasses: string = "tabOptions";
   return (

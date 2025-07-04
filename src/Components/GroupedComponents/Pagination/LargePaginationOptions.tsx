@@ -1,7 +1,7 @@
 interface Props {
   currentPage: number;
-  active: number | null;
-  setActive: React.Dispatch<React.SetStateAction<number | null>>;
+  active: number;
+  setActive: React.Dispatch<React.SetStateAction<number>>;
 }
 /**
  * LargePaginationOptions - renders the Large Pagination section
@@ -22,9 +22,9 @@ export default function LargePaginationOptions({
   return (
     <li
       className={`largePagination ${optionClasses} ${
-        active === currentPage ? activePage : "bg-dark text-white"
+        active === currentPage - 1 ? activePage : "bg-dark text-white"
       }`}
-      onClick={() => setActive(currentPage)}
+      onClick={() => setActive(currentPage - 1)}
     >
       <span>{currentPage}</span>
     </li>

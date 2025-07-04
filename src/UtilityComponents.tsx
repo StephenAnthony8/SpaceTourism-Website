@@ -5,9 +5,9 @@
  * Includes device context and responsive utilities for child components.
  */
 
-import { useEffect, useState, type JSX } from "react";
+import { useContext, useEffect, useState, type JSX } from "react";
 import { useMediaQuery } from "react-responsive";
-import { CurrentDeviceSize, mobile, tablet } from "./Store";
+import { CurrentDeviceSize, mobile, NavMobileState, tablet } from "./Store";
 
 /**
  * CurrentDevice component for the Space Tourism website.
@@ -40,5 +40,32 @@ export const CurrentDevice = ({
     <CurrentDeviceSize.Provider value={deviceType}>
       {children}
     </CurrentDeviceSize.Provider>
+  );
+};
+
+
+export const NavMobileSetter = ({
+  children,
+}: {
+  children: JSX.Element[] | JSX.Element;
+}) => {
+  const deviceType = useContext(CurrentDeviceSize);
+  const [active, setActive] = useState<boolean>(false);
+  const activeObj = {active, setActive};
+
+
+  useEffect(() => {
+
+    if (deviceType !== "Mobile") {
+      setActive(false);
+    }
+    
+  }, [deviceType]);
+  
+
+  return (
+    <NavMobileState.Provider value={activeObj}>
+      {children}
+    </NavMobileState.Provider>
   );
 };

@@ -2,16 +2,11 @@ import { useContext } from "react";
 import { CurrentDeviceSize } from "../../../Store";
 import "./UtilityOptions.css";
 
-/* interface MyProps {
-  navPage: string;
-  activePage: string;
-  setActivePage: React.Dispatch<React.SetStateAction<string>>;
-} */
 interface Props {
   id: number
   option: string;
-  selected: number|null;
-  setSelected: React.Dispatch<React.SetStateAction<number|null>>;
+  selected: number;
+  setSelected: React.Dispatch<React.SetStateAction<number>>;
   isNavigation?: boolean;
   optionClasses: string;
 }
@@ -24,8 +19,8 @@ export default function UtilityOptions({
   optionClasses
 }: Props) {
   const currentDevice = useContext(CurrentDeviceSize);
-  console.log(isNavigation);
   return (
+
     <li
       className={`utilityOptions flex text-white upper position-${
         isNavigation && currentDevice === "Mobile" ? "right" : "bottom"
@@ -33,7 +28,9 @@ export default function UtilityOptions({
 
       onClick={() => setSelected(id)}
     >
+      
       <span>{option}</span>
     </li>
+
   );
 }

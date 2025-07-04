@@ -35,6 +35,12 @@ A modern, responsive web application that showcases a space tourism experience. 
 - CSS Modules and custom utility classes
 - Vite (build tool)
 
+## Dependencies
+- React
+- React Router (react-router-dom)
+- Zustand
+- react-responsive
+
 ## License
 
 MIT

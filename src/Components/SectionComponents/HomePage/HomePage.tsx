@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import Explore from "../../GroupedComponents/Explore/Explore";
 import "./HomePage.css";
 
@@ -8,7 +9,8 @@ import "./HomePage.css";
  * @returns {JSX.Element} The rendered HomePage component.
  */
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
+
   return (
     <section className="homepage homepage-responsive flex">
       <div className="herosection-content herosection-content-responsive flex">

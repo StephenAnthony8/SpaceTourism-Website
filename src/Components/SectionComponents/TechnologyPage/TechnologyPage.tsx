@@ -5,17 +5,33 @@ import {
   UtilitySectionTitle,
 } from "../UtilitySectionComponents";
 import Pagination from "../../GroupedComponents/Pagination/Pagination";
+import { useContext, useState } from "react";
+import { CurrentDeviceSize, technologyData } from "../../../Store";
 
 export default function TechnologyPage() {
+  const [selected, setSelected] = useState<number>(1);
+  const screenSize = useContext(CurrentDeviceSize);
+    
+  /* Entries */
+  /**
+   * selected - currently active option
+   * setSelected - sets the currently active option
+   * technologyData: Data for the technology page. Includes name, description  & images(landscape & portrait).
+   
+   Usage
+   * technologyData[selected].option
+
+   Options
+   * images.landscape & images.portrait.webp - technology images
+   * name - technology member name
+   * role - technology member role
+   * bio - technology member bio
+   */
   const pageNumber = "3";
   const pageTitle = "SPACE LAUNCH 101";
   const renderType = "large"; // Pagination type for large pagination controls
   const paginationOptions = [1, 2, 3]; // Pagination options for technology sections
-  // Image path for the technology page 
-  const pageImage = "/assets/technology/image-spaceport-portrait.jpg"; // Example image path
-  /* Images are both landscape & Portrait */
-  // Image alt text for accessibility
-  const imageAltText = "Spaceport Image";
+
 
   return (
     <section className="technology-page technology-page-responsive section-page section-page-responsive text-blue flex-container">
@@ -23,29 +39,29 @@ export default function TechnologyPage() {
 
       <div className="technology-page-container flex">
         <div className="technology-container technology-container-responsive flex">
-          <Pagination {...{ renderType, paginationOptions }} />
-          <TechnologyPageContent />
+          <Pagination {...{ renderType, paginationOptions, selected, setSelected }} />
+          <TechnologyPageContent selected={selected} />
         </div>
         <aside className="technology-image flex">
-          <img src={pageImage} alt={imageAltText} />
+          <img 
+          src={screenSize === "Desktop" ? technologyData[selected].images.portrait : technologyData[selected].images.landscape}
+          alt={technologyData[selected].name + " image"} />
         </aside>
       </div>
     </section>
   );
 }
 
-function TechnologyPageContent() {
+function TechnologyPageContent({ selected } : {selected: number} ) {
   // Content for the technology page
-  const name = "spaceport";
+
   const label = "The terminology...";
   const classes = "technology-content-title";
-  // Explanation text for the technology page
-  const explanationText =
-    "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.";
+
   return (
     <section className="technology-content technology-content-responsive flex">
-      <UtilitySectionHeading {...{ label, name, classes }} />
-      <UtilitySectionExplanation {...{ explanationText }} />
+      <UtilitySectionHeading {...{ label, classes }} name={technologyData[selected].name} />
+      <UtilitySectionExplanation explanationText={technologyData[selected].description} />
     </section>
   );
 }

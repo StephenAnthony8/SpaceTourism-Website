@@ -1,8 +1,12 @@
 import "./MainPage.css";
-import HomePage from "../Components/SectionComponents/HomePage/HomePage";
+/* import HomePage from "../Components/SectionComponents/HomePage/HomePage";
 import DestinationPage from "../Components/SectionComponents/DestinationPage/DestinationPage";
 import CrewPage from "../Components/SectionComponents/CrewPage/CrewPage";
 import TechnologyPage from "../Components/SectionComponents/TechnologyPage/TechnologyPage";
+import { useMatch } from "react-router";
+import { useEffect, useState } from "react"; */
+import { Outlet } from "react-router";
+
 
 /**
  * MainPage component for the Space Tourism website.
@@ -18,14 +22,12 @@ export default function MainPage() {
         "bg-technology",
       ]; */
 
+
+
+
   return (
     <main className="mainpage normal-font-settings flex">
-      {/* 
-      <HomePage />
-      <DestinationPage />
-      <CrewPage />
-      */}
-      <TechnologyPage />
+      <Outlet />
     </main>
   );
 }
