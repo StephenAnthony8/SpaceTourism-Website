@@ -12,7 +12,6 @@ A modern, responsive web application that showcases a space tourism experience. 
 - Explore destinations, crew, and technology used in space tourism
 - Responsive layouts and backgrounds for all major breakpoints
 - Modular, reusable React components
-- State management with Zustand
 - Context-based device detection for adaptive UI
 
 ## Getting Started
@@ -31,14 +30,12 @@ A modern, responsive web application that showcases a space tourism experience. 
 ## Technologies Used
 
 - React + TypeScript
-- Zustand (state management)
 - CSS Modules and custom utility classes
 - Vite (build tool)
 
 ## Dependencies
 - React
 - React Router (react-router-dom)
-- Zustand
 - react-responsive
 
 ## License

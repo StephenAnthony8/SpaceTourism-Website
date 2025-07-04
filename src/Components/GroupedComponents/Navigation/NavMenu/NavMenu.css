@@ -89,6 +89,7 @@
 
   width: 254px;
   height: 100%;
+  flex:1 0 0;
 }
 
 .dropdown-icon-container {

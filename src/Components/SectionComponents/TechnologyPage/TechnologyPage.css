@@ -66,6 +66,7 @@
   }
   .technology-page-container {
     flex-direction: column-reverse;
+    justify-content: center;
   }
 }
 
