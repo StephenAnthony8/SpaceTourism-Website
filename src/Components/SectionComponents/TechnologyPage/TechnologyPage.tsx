@@ -8,6 +8,14 @@ import Pagination from "../../GroupedComponents/Pagination/Pagination";
 import { useContext, useState } from "react";
 import { CurrentDeviceSize, technologyData } from "../../../Store";
 
+
+import imageLaunchVehiclePortrait from "/assets/technology/image-launch-vehicle-portrait.jpg";
+import imageLaunchVehicleLandscape from "/assets/technology/image-launch-vehicle-landscape.jpg";
+import imageSpaceportPortrait from "/assets/technology/image-spaceport-portrait.jpg";
+import imageSpaceportLandscape from "/assets/technology/image-spaceport-landscape.jpg";
+import imageSpaceCapsulePortrait from "/assets/technology/image-space-capsule-portrait.jpg";
+import imageSpaceCapsuleLandscape from "/assets/technology/image-space-capsule-landscape.jpg";
+
 export default function TechnologyPage() {
   const [selected, setSelected] = useState<number>(0);
   const screenSize = useContext(CurrentDeviceSize);
@@ -31,7 +39,16 @@ export default function TechnologyPage() {
   const pageTitle = "SPACE LAUNCH 101";
   const renderType = "large"; // Pagination type for large pagination controls
   const paginationOptions = [1, 2, 3]; // Pagination options for technology sections
-
+  const technologyImagesPortrait = [
+    imageLaunchVehiclePortrait,
+    imageSpaceportPortrait,
+    imageSpaceCapsulePortrait
+  ];
+  const technologyImagesLandscape = [
+    imageLaunchVehicleLandscape,
+    imageSpaceportLandscape,
+    imageSpaceCapsuleLandscape
+  ];
 
   return (
     <section className="technology-page technology-page-responsive section-page section-page-responsive text-blue flex-container">
@@ -44,7 +61,7 @@ export default function TechnologyPage() {
         </div>
         <aside className="technology-image flex">
           <img 
-          src={screenSize === "Desktop" ? technologyData[selected].images.portrait : technologyData[selected].images.landscape}
+          src={screenSize === "Desktop" ? technologyImagesPortrait[selected] : technologyImagesLandscape[selected]}
           alt={technologyData[selected].name + " image"} />
         </aside>
       </div>

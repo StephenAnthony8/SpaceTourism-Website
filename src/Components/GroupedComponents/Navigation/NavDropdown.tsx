@@ -1,10 +1,6 @@
-/* interface Props {
-	active: string;
-	setActive: React.Dispatch<React.SetStateAction<string>>;
-} */
-
 import { useContext } from "react";
 import { NavMobileState } from "../../../Store";
+import iconHamburger from "/assets/shared/icon-hamburger.svg";
 
 /**
  * NavDropdown: Renders the hamburger/close menu icon in mobile mode
@@ -18,7 +14,7 @@ export default function NavDropdown() {
   return (
     <div className="navDropdown flex">
       <img
-        src="/assets/shared/icon-hamburger.svg"
+        src={iconHamburger}
         alt="dropdown"
         className="dropdown-image"
         onClick={() => {

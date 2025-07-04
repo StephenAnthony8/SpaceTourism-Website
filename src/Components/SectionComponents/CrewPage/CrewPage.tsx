@@ -8,6 +8,12 @@ import {
 } from "../UtilitySectionComponents";
 import "./CrewPage.css";
 import { crewData, type PageProps } from "../../../Store";
+
+import ImageDouglas from "/assets/crew/image-douglas-hurley.webp";
+import ImageMark from "/assets/crew/image-mark-shuttleworth.webp";
+import ImageVictor from "/assets/crew/image-victor-glover.webp";
+import ImageAnousheh from "/assets/crew/image-anousheh-ansari.webp";
+
 /**
  * CrewPage component for the Space Tourism website.
  * Displays crew details, including a title, crew member image, and content with pagination.
@@ -33,6 +39,12 @@ export default function CrewPage(): JSX.Element {
    * bio - crew member bio
    */
   const [selected, setSelected] = useState<number>(0);
+  const crewimages = [
+    ImageDouglas,
+    ImageMark,
+    ImageVictor,
+    ImageAnousheh,
+  ];
 
   const pageNumber = "2";
   const pageTitle = "MEET YOUR CREW";
@@ -45,7 +57,7 @@ export default function CrewPage(): JSX.Element {
         <CrewContent {...{selected, setSelected}} />
         <aside className="crew-page-image fade-img flex">
           <img
-            src={crewData[selected].images.webp}
+            src={crewimages[selected]}
             alt={crewData[selected].name + " image"}
             className="crew-image crew-image-responsive"
           />

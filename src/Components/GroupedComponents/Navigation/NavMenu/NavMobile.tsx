@@ -2,6 +2,7 @@ import "./NavMenu.css";
 import NavMenu from "./NavMenu";
 import { NavMobileState } from "../../../../Store";
 import { useContext, useEffect, useState } from "react";
+import iconClose from "/assets/shared/icon-close.svg";
 export default function NavMobile() {
   const { active, setActive } = useContext(NavMobileState);
   const [drawer, setDrawer] = useState<string>("invisible");
@@ -23,7 +24,7 @@ export default function NavMobile() {
       <div className="dropdown-icon-container">
         <div className="navDropdown flex">
           <img
-            src="/assets/shared/icon-close.svg"
+            src={iconClose}
             alt="close dropdown"
             className="dropdown-image"
             onClick={handleDropdown}

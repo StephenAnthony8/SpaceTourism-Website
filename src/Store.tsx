@@ -3,25 +3,6 @@ import { createContext } from "react";
 /* import { create } from "zustand"; */
 import jsonData from "./data/data.json";
 
-/* type SpaceStore = {
-  activePagination: number | null;
-  setActivePagination: (
-    activePagination: SpaceStore["activePagination"]
-  ) => void;
-
-  pageCount: number | null;
-  setPageCount: (pageCount: SpaceStore["pageCount"]) => void;
-};
-
-export const useSpaceStore = create<SpaceStore>((set) => ({
-  activePagination: null,
-  setActivePagination: (activePagination) =>
-    set(() => ({ activePagination: activePagination })),
-
-  pageCount: null,
-  setPageCount: (pageCount) => set(() => ({ pageCount: pageCount })),
-})); */
-
 /* Screen sizes */
 export interface currentDevice {
   maxWidth?: number;

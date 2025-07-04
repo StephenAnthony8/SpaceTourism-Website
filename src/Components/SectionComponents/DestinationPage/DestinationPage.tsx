@@ -8,6 +8,11 @@ import {
 import { useState, type JSX } from "react";
 import { destinationData, type PageProps } from "../../../Store";
 
+import imageMoon from "/assets/destination/image-moon.webp";
+import imageMars from "/assets/destination/image-mars.webp";
+import imageEuropa from "/assets/destination/image-europa.webp";
+import imageTitan from "/assets/destination/image-titan.webp";
+
 /**
  * DestinationPage component for the Space Tourism website.
  * Displays destination details, including a tab menu, title, image, description, and travel information.
@@ -31,6 +36,12 @@ export default function DestinationPage(): JSX.Element {
    * distance & travel - destination distance & travel
    */
   const [selected, setSelected] = useState<number>(0);
+  const destinationImages = [
+    imageMoon,
+    imageMars,
+    imageEuropa,
+    imageTitan,
+  ];
   return (
     <section className="destination-page section-page section-page-responsive text-blue flex-container">
       <UtilitySectionTitle pageNumber="1" pageTitle="PICK YOUR DESTINATION" />
@@ -38,7 +49,7 @@ export default function DestinationPage(): JSX.Element {
         <aside className="destination-image destination-image-responsive flex">
           {/* JSON Image & alt description */}
           <img
-            src={destinationData[selected].images.webp}
+            src={destinationImages[selected]}
             alt={destinationData[selected].name + " image"}
           />
         </aside>
