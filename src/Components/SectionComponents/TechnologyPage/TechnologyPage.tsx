@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 import { CurrentDeviceSize, technologyData } from "../../../Store";
 
 export default function TechnologyPage() {
-  const [selected, setSelected] = useState<number>(1);
+  const [selected, setSelected] = useState<number>(0);
   const screenSize = useContext(CurrentDeviceSize);
     
   /* Entries */
