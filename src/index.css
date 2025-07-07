@@ -51,19 +51,19 @@
   --lh-9: 190%;
 
   /* ------  Spacing    ------ */
-  --sp-1600:128px   /*  8rem;  */;
-  --sp-1200:96px    /*  6rem;  */;
-  --sp-1000:80px    /*  5rem;  */;
-  --sp-800:64px     /*  4rem;  */;
-  --sp-600:48px     /*  3rem;  */;
-  --sp-500:40px     /*  2.5rem;  */;
-  --sp-400:32px     /*  2rem;  */;
-  --sp-300:24px     /*  1.5rem;  */;
-  --sp-200:16px     /*  1rem;  */;
-  --sp-150:12px     /*  0.75rem;  */;
-  --sp-100:8px      /*  0.5rem;  */;
-  --sp-50:4px       /*  0.25rem;  */;
-  --sp-25:2px       /*  0.125rem;  */;
+  --sp-1600: 128px /*  8rem;  */;
+  --sp-1200: 96px /*  6rem;  */;
+  --sp-1000: 80px /*  5rem;  */;
+  --sp-800: 64px /*  4rem;  */;
+  --sp-600: 48px /*  3rem;  */;
+  --sp-500: 40px /*  2.5rem;  */;
+  --sp-400: 32px /*  2rem;  */;
+  --sp-300: 24px /*  1.5rem;  */;
+  --sp-200: 16px /*  1rem;  */;
+  --sp-150: 12px /*  0.75rem;  */;
+  --sp-100: 8px /*  0.5rem;  */;
+  --sp-50: 4px /*  0.25rem;  */;
+  --sp-25: 2px /*  0.125rem;  */;
 }
 
 /*
@@ -94,9 +94,9 @@ picture {
 }
 
 /* --- body defaults --- */
-html {
+/* html {
 
-}
+} */
 body {
   height: 100vh;
   min-height: 100vh;
@@ -126,7 +126,8 @@ textarea,
 select {
   font: inherit;
 }
-a, link {
+a,
+link {
   color: inherit;
   text-decoration: none;
 }
