@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router";
+import { createHashRouter } from "react-router";
 import App from "./App";
 import HomePage from "./Components/SectionComponents/HomePage/HomePage";
 import CrewPage from "./Components/SectionComponents/CrewPage/CrewPage";
 import DestinationPage from "./Components/SectionComponents/DestinationPage/DestinationPage";
 import TechnologyPage from "./Components/SectionComponents/TechnologyPage/TechnologyPage";
 
-export const router = createBrowserRouter([{
+export const router = createHashRouter([{
     path: "/",
     element: <App />,
     children: [
