@@ -1,5 +1,5 @@
 # Space Tourism Website
-[gh-pages link](https://stephenanthony8.github.io/SpaceTourism-Website//)
+[gh-pages link](https://stephenanthony8.github.io/SpaceTourism-Website/)
 
 A modern, responsive web application that showcases a space tourism experience. This project demonstrates advanced React and TypeScript usage, modular component architecture, and best practices in responsive design and UI/UX. The site features:
 
